@@ -1,0 +1,219 @@
+=IMPORT
+ ----------------------------------------------------------
+	<script>script type="text/javascript"</script>
+	<script>state JS here</script>
+	<script>script crc="file.js"</script>
+	async пока не загрузит, след ждет
+	defer следующий может загружаться, не дожидаясь очереди
+		<script> defer src='one.js'</script>
+/IMPORT----------------------------------------------------
+
+=MATH
+ -----------------------------------------------------------
+	var N = new Number(4000);// создает typeof Number
+	N.toFixed(число);//кол-во знаков после запятой. output-> 4000.
+		2 .toFixed(2);// стоит пробел после 2, иначе вызовет ошибку
+	N.toExponencial(2);//5000e2
+		10e308; max иначе infinity
+	N.toPrecision(3);//точность 3 знака всего до-и-после точки
+	MATH.ceil(n);//округлить до целого в максимум
+	MATH.floor(n);//отбросить после запятой
+	MATH.max(a,b,c..);
+	MATH.min(a,b,c...);
+	MATH.round(n);//нормальное округление
+	MATH.random();
+	MATH.PI
+		parseFloat("21.1"); = 21.4
+		parseFloat("7 attr"); = 7
+		parseFloat("attsr 7"); = NaN
+	patseInt()
+	isNaN(строка);// если число, то false иначе true
+	INCREMENT-DECREMENT --число//префиксный. Число++ //постфиксный
+		n+=12; n*=12; /=; -=
+/MATH------------------------------------------------------
+
+=STRING
+ -----------------------------------------------------------
+	1 символ = 2 байта
+	\n - новая строка
+	\t - табуляция
+	\" - символ кавычек
+	\ - проложение строки, не должно в каонце быть пробела
+	.lenght; //выводит длину строки
+	.charAt(число);//какой символ находится под Числом в строке string
+	string[число];//какой символ находится под Числом в строке string
+	.substring(число);//берет первые Число символов строки
+	.substring(начало,конец);//первые символы и последние
+	.slice(-10);//последние 10 символов строки
+	.substr(начало,сколькоСимволовВзять);
+	.indexOf("искомыйСимвол_ы");//вернет порядковый номер символа(ов)
+	.lastIndexOf("искомыйСимвол_ы");//поиск с конца строки
+	.replace("is","is not");//замена в строке 'is' на 'is not'
+	.split("разделитель");//разбивает строку на массив с "разделителем". Если таковой не задан, то "," = ['s','t','r','i','n','g']
+	.toUpperCase();//в верхний регистр
+	.toLowerCase();//в нижний регистр
+	Каждая буква с трочке заглавная
+		[cappitalize1] function capitalizeFirstLetter(string) {return string.charAt(0).toUpperCase() + string.slice(1);}
+		[cappitalize2] return string[0].toUpperCase() + string.slice(1);//как массив - самый быстрый
+/STRING----------------------------------------------------
+
+=CONSOLE
+ -----------------------------------------------------------
+	console.log(message,x,y,z);//выводит значение в консоли браузера
+	трактование %s - строки|%d - числа|%i|%f
+	message %s %d %s// y - как число
+		console.log("%2$d theory is %d %s concept. I can only describe it as %s and %s",
+		"string",1,foo.goo,bar,foo.baz);//изменен порядок вывода. %2$d - второе значение как число
+	.log | .info | .warn | .error
+	DOM- .dir | .dirxml
+	группировка- .group | .groupEnd | .groupCollapsed
+		console.group("Overlord");console.log("Overlord stuff");
+		console.group("Lord");console.log("Overlord stuff");
+	измерение времени работы скрипта- .time | .timeEnd
+	обработка ошибок. Вызов ошибки. .assert</console>
+		var a=1; b='1'; console.assert(a===b, "A doesn't equal B");
+	consile.dir(console) - все методы, которые поддерживает браузер
+/CONSOLE---------------------------------------------------
+
+=CASES
+ -----------------------------------------------------------
+	if(condition){}else{}
+		result = age > 18 ? true : false;
+	if(condition1){}else if(condition2){}else{}
+	[OR] result = x || y; //если х не известен или=0, то сработает у. Спотыкается значении true или в любом случае самое последнее, даже если 0
+	[AND] if(x && y){} оба значения должны быть true. Если левый false еговозвращает иначе возвращает правый результат
+	var i=0; while (i < 5){}
+	do {} while(condition);
+		do {...; i++;} while (i < 3);
+	for(begin;condition;step){};
+	break; - прерывает цикл
+	continue; проложает цикл, но попускает значение текущее
+	for (var key in obj){console.log(obj.[key]);}//перебирает все объекты Object
+	switch(value){case someValue: ;break;...default:...}
+	with (Object){}
+		with (Math){var rand = random();var big = max(3.4.5);var height = round(76.35);}
+/CASES-----------------------------------------------------
+
+=ARRAY
+ -----------------------------------------------------------
+	var nameOfArray=[];
+	.push - добавляет в конец
+	.pop - удалает последний
+	.unshift -добавить вначало
+	.shift - удалить сначала
+	.concat - объединяет архивы
+	.join - объединяет архивы с троку
+	.lastIndexOf - ищет в архиве символы
+	.lastIndexOf - последние строки
+	.sort - сортирует
+	 [SORT ARRAY]arr.sort(function(a,b){return a-b});//вывод чисел по-порядку
+	.reverse - изменяет порядок элементов
+	.slice - получить элементы из массива
+		arr.slice(0,2);//получить два элемента от 0-го
+	.splice - удаление или вставка в массив
+		arr.splice(2,0,"One","Two");//начиная с 2-го вставить "One","Two". Удалить 0 элементов
+		var arr = [[1,2],[2,3],[3,4]]; arr[1][0];//2
+/ARRAY-----------------------------------------------------
+
+=OBJECT
+ ----------------------------------------------------------
+	var obj={name: "One", last:"Two"};
+	obj.name выведет "One";
+	object можно включать в другой Object
+/OBJECT----------------------------------------------------
+
+=EVENTS
+ ----------------------------------------------------------
+	onload -  когда подгрузился документ или его конкретная часть
+	onchange -  для checkbox, radiobutton, когда меняется их стан
+	onfocus -  текущий элемент, input text
+	onblur -  переключился на другой элемент
+	[MOUSE]
+		onclick=func();// действие при клике на объекте, записывается в таге объекта
+		document.getElementById("title").onclick = function(){this.innerHTML = "text";};//прописано в js не загромаджует html</document>
+		onmouseover - над объектов
+		onmouseout - покинула зону объекта
+			<p class="lw" onmouseover="style.color='red'" onmouseout="style.color='green'">Hello Weaver!</p>
+		onmousedown - нажал клавишу мыши
+		onmouseup - отпустил клавишу мыши
+		<img src="one.gif" alt="one" onmouseover="this.src='two.gif';onmouseout="this.src='one.gif';"> подмена изображений при наведении мыши и возврат ее, когда мышь ушла
+	[/MOUSE]
+	[KEY]
+		<onkeypress></onkeypress>
+		<onkeuup></onkeuup>
+		<onkeydown></onkeydown>
+	[/KEY]
+/EVENTS----------------------------------------------------
+
+=DOM
+ ----------------------------------------------------------
+	document.write(); - печать внутри документа html
+	[getElement]
+		document.getElementById() - бобраться к элементу с ID
+			<div> id="div1" _ var myDiv = document.getElementById("div1");
+		document.getElementById("div1").innerHTML;// добирается к элементам внутри div1
+		document.getElementById("div1").innerHTML = "<p>Some text added</p>";// 	вставляет\замещает текст
+		document.querySelector("input[type='text").value;
+		document.getElementById("div1").style....=""// изменение стиля
+		document.getElementByClassName("class name");//создает массив
+			var myClass = document.getElementsByClassName('test');
+			myClass[0].style.backgroundColor='blue';
+
+			var classArr = document.getElementByClassName("header");
+			for (i=0;i < classArr.length;i++){classArr[i].style.color = 'red';// меняет всему 	классу цвет};
+		document.getElementByTagName("p");// собирает все тэги р
+		document.querySelectorAll("p");// создает также массив со всеми элементами, указаными 	в скобках
+		document.querySelector("p");//только первый найденный селектор
+	[createElement]
+		document.createElement("tag");
+		document.createTextNode(text);
+		parentElem.appendChild(elem);
+		parentElem.insertBefore(elem , nextSubling);// вставляет в нужную позицыю
+			parent.insertBefore(child, liItems[1]);//вставит после второго элемента li
+	parentElem.removeChild(elem);
+	parentElem.replaceChild(newElem, elem);
+	document.reload(true);// разрешает на перезагрузку файла с сервера
+/DOM-------------------------------------------------------
+
+=BROWSER
+ ----------------------------------------------------------
+	[history]
+		history.length - число посещенных страниц
+		history.forvard()
+		history.back()
+		history.go(-_число);//- назад, просто число - вперед
+	[location]
+		location.href - полный адресс текущей страницы
+		location.href = 'www.newpage.com';//подменяет текущий адресс
+		location.hostname - www.example.com
+		location.replace('www.new.com');// добавляет вместо текущей страницы, то что в скобках, а предидущую удаляет из истории адрессной строки, но в самой истории ссылка есть
+	[navigator]
+		navigator.appName
+		navigator.appCodeName
+		navigator.appVersion
+		navigator.language
+		navigator.cookieEnabled
+		navigator.cpuClass
+		navigator.onLine
+		navigator.platform
+		navigator.plugins.length
+/BROWSER---------------------------------------------------
+
+=DATE_TIME
+ ----------------------------------------------------------
+	var mydate = new Date();
+	.getFullYear();//2012
+	.getMonth();//0-11
+	.getDate();//1-31
+	.getDay();//0-6 week
+	.getHours();//0-23
+	.getMinutes();//0-59
+	.getSeconds();//0-59
+	new Date(year, month, day, hours, minutes, seconds, milliseconds);
+		var dl = new Date("October 22, 1995 10:57:22");
+		var d2 = new Date(95,9,22) // 22nd October 1995 00:00:00
+		var d3 = new Date(95,9,22,10,57,0)  // 22nd October 1995 10:57:00
+	.setDate(число)</mydate>
+	.toDateString();</mydate>
+	.toTimeString();</mydate>
+/DATE_TIME-------------------------------------------------
